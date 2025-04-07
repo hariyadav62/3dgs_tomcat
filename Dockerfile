@@ -1,5 +1,5 @@
 # Use the official OpenJDK 17 base image for Java 17
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 
 # Set Tomcat version
 ENV TOMCAT_VERSION 11.0.5
