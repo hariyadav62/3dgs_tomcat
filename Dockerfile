@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && ln -s /opt/apache-tomcat-${TOMCAT_VERSION} ${TOMCAT_HOME}
 
 # Copy your WAR file into the Tomcat webapps directory
-COPY myapp.war ${TOMCAT_HOME}/webapps/
+COPY InstantSplat.war ${TOMCAT_HOME}/webapps/
 
 # Install RunPod SDK
 RUN apt-get install -y python3 python3-pip && \
