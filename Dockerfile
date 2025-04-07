@@ -2,13 +2,13 @@
 FROM openjdk:17-jre-slim
 
 # Set Tomcat version
-ENV TOMCAT_VERSION 11.0.4
+ENV TOMCAT_VERSION 11.0.5
 ENV TOMCAT_HOME /opt/apache-tomcat-${TOMCAT_VERSION}
 
-# Install required utilities and download Tomcat 11.0.4
+# Install required utilities and download Tomcat 11.0.5
 RUN apt-get update && apt-get install -y \
     wget \
-    && wget https://downloads.apache.org/tomcat/tomcat-11/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O /tmp/tomcat.tar.gz \
+    && https://dlcdn.apache.org/tomcat/tomcat-11/v11.0.5/bin/apache-tomcat-11.0.5.tar.gz -O /tmp/tomcat.tar.gz \
     && tar xzf /tmp/tomcat.tar.gz -C /opt \
     && rm /tmp/tomcat.tar.gz \
     && ln -s /opt/apache-tomcat-${TOMCAT_VERSION} ${TOMCAT_HOME}
